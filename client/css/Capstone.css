@@ -1,0 +1,43 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2em;
+}
+
+.text {
+    margin: 15px 0;
+}
+
+.body-container {
+    position: relative;
+    width: 60%;
+    left: 20%; 
+}
+
+.menu-item {
+    margin: 1%;
+    padding: 1%;
+    float: left;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.menu-item.active {
+    background-color: lightgrey;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.title {
+    font-size: 4em;
+}
+
+.subtitle {
+    font-size: 1.5em;
+}
+
+.header {
+    font-size: 2em;
+}
+

@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
+import CapstoneHome from './components/capstone/CapstoneHome';
 
 ReactDOM.render(
-    <App />,
-    document.getElementById('root')
+    <CapstoneHome />,
+    document.getElementById('capstone')
 );
+

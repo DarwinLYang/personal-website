@@ -1,30 +1,50 @@
 import React, { Component } from 'react';
 import '../../css/Capstone.css';
+import Home from './Home';
+import About from './About';
+import Blog from './Blog';
+import Contact from './Contact';
+import MenuButton from './MenuButton';
 
 class CapstoneHome extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            active_tab: "menu-home",
+        };
+    }
+
+    handleMenuClick(menu) {
+        this.setState({active_tab: menu})
+    }
+
     render() {
+        let active_tab = this.state.active_tab;
+        let container = null;
+        
+        if (active_tab == "menu-home") {
+            container = <Home />
+        } else if (active_tab == "menu-about") {
+            container = <About />
+        } else if (active_tab == "menu-blog") {
+            container = <Blog />
+        } else if (active_tab == "menu-contact") {
+            container = <Contact />
+        }
+
+
         return (
             <div className="body-container">
                 <div className="menu-bar">
-                    <div id="menu-home" className="menu-item active">Home</div>
-                    <div id="menu-about" className="menu-item">About Us</div>
-                    <div id="menu-blog" className="menu-item">Blog</div>
-                    <div id="menu-contact" className="menu-item">Contact</div>
+                    <MenuButton name='Home' onClick={() => this.handleMenuClick('menu-home')} active={this.state.active_tab == 'menu-home'} />
+                    <MenuButton name='About' onClick={() => this.handleMenuClick('menu-about')} active={this.state.active_tab == 'menu-about'} />
+                    <MenuButton name='Blog' onClick={() => this.handleMenuClick('menu-blog')} active={this.state.active_tab == 'menu-blog'} />
+                    <MenuButton name='Contact' onClick={() => this.handleMenuClick('menu-contact')} active={this.state.active_tab == 'menu-contact'} />
                 </div>
 
                 <br className="clear-both" />
-                
-                <div className="title text">Scribbles and Doodles</div>
-                <div classNam="subtitle text">Scribbles and Doodles is a two in one platform to enhance the experience notetaking and drawing in an affordable manner.</div>
 
-                <div className="header text">Needs Statement</div>
-                <div className="text">We need a better, eco-friendly, affordable solution for students to take and share notes in class.</div>
-                
-                <div className="header text">Scribbles</div>
-                <div className="text">Scribbles is a custom built stylus which not only operates on all tablets but in addition, it has the functionality to detect pressure sensitivity and tilt angles.</div>
-
-                <div className="header text">Doodles</div>
-                <div className="text">Doodles is the campanion application which works with the stylus to provide the user with the best notetaking and drawing experience.</div>
+                { container }
             </div>
         );
     }

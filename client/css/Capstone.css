@@ -19,6 +19,7 @@ body {
     float: left;
     border: 1px solid black;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .menu-item.active {

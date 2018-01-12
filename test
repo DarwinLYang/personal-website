@@ -1,0 +1,13 @@
+<div id="menu-home" className="menu-item {this.state.active_tab == menu-home && active}" onClick={() => this.handleMenuClick("menu-home")}>Home</div>
+<div id="menu-about" className="menu-item {this.state.active_tab == menu-about && active}" onClick={() => this.handleMenuClick("menu-about")}>About Us</div>
+<div id="menu-blog" className="menu-item {this.state.active_tab == menu-blog && active}" onClick={() => this.handleMenuClick("menu-blog")}>Blog</div>
+<div id="menu-contact" className="menu-item {this.state.active_tab == menu-contact && active}" onClick={() => this.handleMenuClick("menu-contact")}>Contact</div>
+
+
+<MenuButton name='Home' onClick={this.handleMenuClick('menu-home')} active={this.state.active_tab == menu-home} />
+<MenuButton name='About' onClick={this.handleMenuClick('menu-about')} active={this.state.active_tab == menu-about} />
+<MenuButton name='Blog' onClick={this.handleMenuClick('menu-blog')} active={this.state.active_tab == menu-blog} />
+<MenuButton name='Contact' onClick={this.handleMenuClick('menu-contact')} active={this.state.active_tab == menu-contact} />
+
+
+<div className="menu-item {this.props.active && active}" onClick={() => this.props.onClick()}>{this.props.name}</div>
